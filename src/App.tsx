@@ -37,7 +37,7 @@ function Dashboard() {
         const list = data.projects ?? [];
         setProjects(list);
         if (list.length > 0) {
-          const savedId = localStorage.getItem('ls_active_project');
+          const savedId = localStorage.getItem('rp_active_project');
           const found = savedId ? list.find(p => p._id === savedId) : null;
           setActiveProject(found ?? list[0]);
         }
@@ -57,7 +57,7 @@ function Dashboard() {
       setTotal(0);
       return;
     }
-    localStorage.setItem('ls_active_project', activeProject._id);
+    localStorage.setItem('rp_active_project', activeProject._id);
     setEvents([]);
     setTotal(0);
     setActiveChannel(null);
@@ -223,7 +223,7 @@ function Dashboard() {
       ) : (
         <div className="setup-page">
           <div className="setup-card">
-            <div className="logo-icon logo-icon-lg" style={{ marginBottom: 24 }}>LS</div>
+            <div className="logo-icon logo-icon-lg" style={{ marginBottom: 24 }}>R</div>
             <h2 className="setup-title">
               {projects.length === 0 ? 'Create your first project' : 'No API keys found'}
             </h2>

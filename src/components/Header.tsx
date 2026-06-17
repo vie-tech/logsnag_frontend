@@ -41,8 +41,8 @@ export function Header({
   return (
     <header className="header">
       <div className="logo">
-        <div className="logo-icon">LS</div>
-        LogSnag
+        <div className="logo-icon">R</div>
+        Ripple
       </div>
 
       <div className="header-center" ref={dropdownRef}>

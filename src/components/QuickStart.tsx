@@ -10,16 +10,16 @@ export function QuickStart({ apiKey, projectName }: Props) {
 
   const slug = projectName.toLowerCase().replace(/\s+/g, '-');
 
-  const snippet = `import LogSnag from '@favourativie/logsnag';
+  const snippet = `import Ripple from '@favourativie/ripple';
 
-const logsnag = new LogSnag({
+const ripple = new Ripple({
   apiKey: '${apiKey}',
   project: '${slug}',
   baseUrl: 'http://localhost:3000', // your backend URL
 });
 
 // Track an event
-await logsnag.track({
+await ripple.track({
   channel: 'payments',
   event: 'New Subscription',
   user: 'user_123',

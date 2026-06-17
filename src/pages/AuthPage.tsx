@@ -39,9 +39,9 @@ export function AuthPage() {
     <div className="auth-page">
       <div className="auth-card">
         <div className="auth-logo">
-          <div className="logo-icon logo-icon-lg">LS</div>
+          <div className="logo-icon logo-icon-lg">R</div>
         </div>
-        <h1 className="auth-title">LogSnag</h1>
+        <h1 className="auth-title">Ripple</h1>
         <p className="auth-subtitle">Self-hosted real-time event tracking</p>
 
         <div className="auth-tabs">

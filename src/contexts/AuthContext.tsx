@@ -14,10 +14,10 @@ interface AuthContextValue {
 const AuthContext = createContext<AuthContextValue | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [token, setToken] = useState<string | null>(() => localStorage.getItem('ls_token'));
+  const [token, setToken] = useState<string | null>(() => localStorage.getItem('rp_token'));
   const [user, setUser] = useState<User | null>(() => {
     try {
-      const u = localStorage.getItem('ls_user');
+      const u = localStorage.getItem('rp_user');
       return u ? (JSON.parse(u) as User) : null;
     } catch {
       return null;
@@ -25,8 +25,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   });
 
   const saveAuth = (t: string, u: User) => {
-    localStorage.setItem('ls_token', t);
-    localStorage.setItem('ls_user', JSON.stringify(u));
+    localStorage.setItem('rp_token', t);
+    localStorage.setItem('rp_user', JSON.stringify(u));
     setToken(t);
     setUser(u);
   };
@@ -54,9 +54,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const logout = useCallback(() => {
-    localStorage.removeItem('ls_token');
-    localStorage.removeItem('ls_user');
-    localStorage.removeItem('ls_active_project');
+    localStorage.removeItem('rp_token');
+    localStorage.removeItem('rp_user');
+    localStorage.removeItem('rp_active_project');
     setToken(null);
     setUser(null);
   }, []);
