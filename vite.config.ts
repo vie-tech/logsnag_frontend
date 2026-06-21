@@ -7,7 +7,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/ws': {
-        target: 'ws://localhost:3000',
+        target: 'ws://https://ripple-backend-gdv3.onrender.com',
         ws: true,
       }
     }
