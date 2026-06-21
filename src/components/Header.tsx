@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import rippleLogo from '../../public/ripple-badge.svg';
 import type { WsStatus, Project } from '../types';
 
 interface Props {
@@ -41,8 +42,7 @@ export function Header({
   return (
     <header className="header">
       <div className="logo">
-        <div className="logo-icon">R</div>
-        Ripple
+        <img src={rippleLogo} alt="Ripple" className="logo-img" />
       </div>
 
       <div className="header-center" ref={dropdownRef}>

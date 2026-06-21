@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
+import rippleIcon from '../public/ripple-icon.svg';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { AuthPage } from './pages/AuthPage';
 import { Header } from './components/Header';
@@ -223,7 +224,7 @@ function Dashboard() {
       ) : (
         <div className="setup-page">
           <div className="setup-card">
-            <div className="logo-icon logo-icon-lg" style={{ marginBottom: 24 }}>R</div>
+            <img src={rippleIcon} alt="" className="setup-icon" />
             <h2 className="setup-title">
               {projects.length === 0 ? 'Create your first project' : 'No API keys found'}
             </h2>
